@@ -1,101 +1,235 @@
+"use client";
+import { Button } from "@/components/ui/button";
+import { Card, CardFooter, CardHeader } from "@/components/ui/card";
 import Image from "next/image";
+import CourseDetailsBanner from "./components/Course-details-banner";
+import Mentors from "./components/Mentors";
+import { StudyWavHero } from "./components/study-wav-hero";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const discount = 9500; // discount amount in currency (e.g., ৳৫০০০)
+  const originalPrice = 15000; // original price
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  const finalPrice = originalPrice - discount; // calculate final price
+
+  function handleCardClick() {
+    console.log("clicked card");
+  }
+
+  // only clicked to the button separately
+  // not the card itself
+  function handleButtonClick() {
+    console.log("clicked button");
+  }
+
+  return (
+    <div
+      onClick={handleCardClick}
+      className="flex flex-col items-center justify-center min-h-screen "
+    >
+      {/* Hero Section */}
+      <StudyWavHero />
+      {/* Course Card Component */}
+      <Card className="overflow-hidden max-w-xl border-none bg-gradient-to-b from-emerald-100">
+        <div className="">
+          <div className="aspect-video w-full">
+            <img
+              alt="Mobile App Development Course thumbnail showing mobile interfaces"
+              className="object-cover w-full h-full"
+              height="200"
+              src="https://riseuplabs.com/wp-content/uploads/2021/07/mobile-application-development-guidelines-riseuplabs.jpg"
+              width="400"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+          <div className="">
+            <div>
+              <ul className="flex justify-between gap-y-4 flex-wrap md:flex-nowrap p-2 *:p-2 *:text-sm *:bg-emerald-100 *:text-emerald-600 *:font-semibold *:rounded">
+                <li>8০ টি প্রোজেক্ট</li>
+                <li>৮০০+ রেকর্ড ভিডিও</li>
+                <li>১৫ অ্যাসাইনমেন্ট</li>
+                <li>৫০ প্রোবলেম সলভিং</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <CardHeader className=" p-4">
+          <p className="font-semibold text-green-800 text-xl">
+            MERN Stack ডেভেলপমেন্ট উইথ ডিজিটাল মার্কেটিং
+          </p>
+
+          {/* Price Section */}
+          {discount ? (
+            <div className=" mt-2">
+              <p className="text-lg font-bold text-red-600 line-through">
+                ৳{originalPrice.toLocaleString("bn-BD")}
+              </p>
+              <p className="text-2xl font-bold text-emerald-600">
+                ৳{finalPrice.toLocaleString("bn-BD")}
+              </p>
+            </div>
+          ) : (
+            <p className="text-lg font-bold text-emerald-600">
+              ৳{originalPrice.toLocaleString("bn-BD")}
+            </p>
+          )}
+        </CardHeader>
+        <CardFooter className=" p-4">
+          <Button
+            onClick={(e) => {
+              e.stopPropagation();
+              handleButtonClick();
+            }}
+            className="bg-emerald-600 hover:bg-emerald-700 w-full"
+          >
+            এনরোল করুন
+          </Button>
+        </CardFooter>
+      </Card>
+
+      <br />
+      <br />
+      <br />
+      {/* mentors */}
+      <Mentors />
+
+      {/* new course details banner */}
+      <CourseDetailsBanner />
+      {/* course details banner */}
+      <div className="hidden bg-gradient-to-b from-emerald-50 to-white">
+        {/* Banner Section */}
+        <section className=" mx-auto py-12 flex gap-y-10 flex-col-reverse md:flex-row items-center justify-evenly px-6">
+          {/* Left Side: Course Details */}
+          <div className="w-full space-y-6">
+            <h1 className="text-3xl md:text-4xl font-semibold text-green-800 ">
+              MERN Stack ডেভেলপমেন্ট উইথ ডিজিটাল মার্কেটিং
+            </h1>
+
+            <p className="text-lg lg:max-w-[70ch] text-gray-700">
+              একটি সম্পূর্ণ কোর্স যা আপনাকে MERN Stack Development এবং ডিজিটাল
+              মার্কেটিং শিখাবে। এই কোর্সে আপনি শিখবেন কীভাবে আধুনিক ওয়েব
+              অ্যাপ্লিকেশন তৈরি করবেন, সাথে ডিজিটাল মার্কেটিং এর বিভিন্ন দিক
+              যেমন SMM, Email Marketing ইত্যাদি।
+            </p>
+
+            <ul className="hidden flex flex-wrap gap-4 md:gap-8 p-2 bg-emerald-100 text-emerald-600 font-semibold rounded-lg">
+              <li className="p-2 bg-white rounded shadow-sm flex items-center">
+                8০টি প্রোজেক্ট
+              </li>
+              <li className="p-2 bg-white rounded shadow-sm flex items-center">
+                ৮০০+ রেকর্ড ভিডিও
+              </li>
+              <li className="p-2 bg-white rounded shadow-sm flex items-center">
+                ১৫টি অ্যাসাইনমেন্ট
+              </li>
+              <li className="p-2 bg-white rounded shadow-sm flex items-center">
+                ৫০টি প্রোবলেম সলভিং
+              </li>
+            </ul>
+
+            {/* Course Timing */}
+            <ul className="space-y-2 text-gray-700 mt-4">
+              <li>
+                <strong>Course Duration:</strong> 8 Months
+              </li>
+              <li>
+                <strong>Start Date:</strong> 20th November 2024
+              </li>
+              <li>
+                <strong>Enrollment Ends:</strong> 20th December 2024
+              </li>
+              <li>
+                <strong>Support:</strong> 10 AM to 10 PM on Discord
+              </li>
+            </ul>
+
+            {/* Pricing Section */}
+            <div className=" flex items-center gap-8">
+              <Button
+                className="bg-emerald-600 py-6 px-8 text-lg hover:bg-emerald-700 max-w-max"
+                onClick={() => alert("Enroll Now!")}
+              >
+                ১ম ব্যাচে ভর্তি হোন
+              </Button>
+              <div>
+                {!discount ? (
+                  <p className="text-lg font-bold text-emerald-600">
+                    ৳{originalPrice.toLocaleString("bn-BD")}
+                  </p>
+                ) : (
+                  <div className=" flex items-center gap-4">
+                    <p className="text-lg font-bold text-red-600 line-through">
+                      ৳{originalPrice.toLocaleString("bn-BD")}
+                    </p>
+                    <p className="text-2xl font-bold text-emerald-600">
+                      ৳{finalPrice.toLocaleString("bn-BD")}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side: Image */}
+          <div className="w-full mx-auto flex justify-center md:justify-end items-center">
+            <Image
+              // src="https://media.geeksforgeeks.org/wp-content/uploads/20231110115359/Roadmap-to-Mern-stack-developer-copy-(3).webp"
+              // src="https://c8.alamy.com/comp/P8KEF2/vertical-horizontal-optical-illusion-the-vertical-line-seems-to-be-longer-but-both-lines-are-of-the-same-length-bisected-line-appears-to-be-shorter-P8KEF2.jpg"
+              // src="https://i.ibb.co.com/pyGJm1m/MERN.webp"
+              src="/MERN.png"
+              alt="MERN Stack Development with Digital Marketing"
+              width={500}
+              height={300}
+              className="rounded-lg shadow-lg"
+            />
+          </div>
+        </section>
+
+        {/* Additional Features Section */}
+        <section className="  py-4 px-6">
+          <div className="bg-white shadow-lg rounded-lg p-6 space-y-6">
+            <h2 className="text-2xl font-semibold text-green-800">
+              কোর্সের অন্তর্ভুক্তি
+            </h2>
+            <ul className="flex flex-wrap gap-4 md:gap-8 p-2 *:bg-emerald-100 text-emerald-600 font-semibold rounded-lg">
+              <li className="p-2 bg-white rounded shadow-sm flex items-center">
+                8০টি প্রোজেক্ট
+              </li>
+              <li className="p-2 bg-white rounded shadow-sm flex items-center">
+                ৮০০+ রেকর্ড ভিডিও
+              </li>
+              <li className="p-2 bg-white rounded shadow-sm flex items-center">
+                ১৫টি অ্যাসাইনমেন্ট
+              </li>
+              <li className="p-2 bg-white rounded shadow-sm flex items-center">
+                ৫০টি প্রোবলেম সলভিং
+              </li>
+
+              <li className="p-2 bg-white rounded shadow-sm flex items-center">
+                জব প্লেসমেন্ট সাপোর্ট
+              </li>
+              <li className="p-2 bg-white rounded shadow-sm flex items-center">
+                ফ্রিলান্সিং গাইডলাইন
+              </li>
+              <li className="p-2 bg-white rounded shadow-sm flex items-center">
+                সোশ্যাল মিডিয়া মার্কেটিং
+              </li>
+              <li className="p-2 bg-white rounded shadow-sm flex items-center">
+                ইমেইল মার্কেটিং
+              </li>
+              <li className="p-2 bg-white rounded shadow-sm flex items-center">
+                Next.js
+              </li>
+              <li className="p-2 bg-white rounded shadow-sm flex items-center">
+                ক্লায়েন্ট হান্টিং আউটসাইড অফ মার্কেটপ্লেস
+              </li>
+              <li className="p-2 bg-white rounded shadow-sm flex items-center">
+                সার্টিফিকেট অব সাকসেসফুল কমপ্লিশন
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
