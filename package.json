@@ -2,6 +2,10 @@
   "name": "card-of-study-wav-course",
   "version": "0.1.0",
   "private": true,
+  "overrides": {
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
