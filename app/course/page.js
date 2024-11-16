@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function CoursePage() {
@@ -31,10 +32,12 @@ export default function CoursePage() {
           Master MongoDB, Express, React, and Node.js in this comprehensive
           course.
         </p>
-        <img
+        <Image
           src="https://www.digitalsilk.com/wp-content/uploads/2020/06/website-development-process-hero-image.png"
           alt="MERN Stack Course"
           className="w-full max-w-lg mx-auto rounded-md shadow-lg mt-6"
+          width={800}
+          height={600}
         />
       </header>
 
@@ -46,7 +49,7 @@ export default function CoursePage() {
           </h2>
           <p className="mt-4">
             This course provides in-depth knowledge of the MERN stack (MongoDB,
-            Express, React, Node.js). You'll learn to build robust web
+            Express, React, Node.js). You&apos;ll learn to build robust web
             applications from scratch, gain practical experience, and become a
             full-stack developer ready for the job market.
           </p>

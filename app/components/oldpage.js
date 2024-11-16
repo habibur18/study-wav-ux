@@ -28,7 +28,7 @@ export default function Home() {
       <Card className="overflow-hidden max-w-xl border-none bg-gradient-to-b from-emerald-100">
         <div className="">
           <div className="aspect-video w-full">
-            <img
+            <Image
               alt="Mobile App Development Course thumbnail showing mobile interfaces"
               className="object-cover w-full h-full"
               height="200"
