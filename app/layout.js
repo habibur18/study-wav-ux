@@ -1,3 +1,4 @@
+import { CourseList } from "@/components/Courselist";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -24,6 +25,8 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        {/* all course */}
+        <CourseList />
       </body>
     </html>
   );
